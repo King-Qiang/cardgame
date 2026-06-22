@@ -1,0 +1,28 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="sub-page">
+  <top-bar title="充值" gold="{{gold}}" bind:back="onBack" />
+  <view class="sub-body recharge-body">
+    <text class="hint dev-tag">开发环境：模拟支付（§5.12.2）</text>
+    <view class="tier-row">
+      <view
+        wx:for="{{tiers}}"
+        wx:key="goldAmount"
+        class="tier panel {{selectedIndex === index ? 'active' : ''}}"
+        data-index="{{index}}"
+        bindtap="onSelectTier"
+      >
+        <text class="label">{{item.label}}</text>
+        <text class="gold">+{{item.goldAmount}} 金</text>
+      </view>
+    </view>
+    <text class="status">{{statusText}}</text>
+    <view class="actions">
+      <button class="btn-primary" loading="{{paying}}" bindtap="onCreateOrder">创建订单</button>
+      <button
+        class="btn-ghost"
+        disabled="{{!pendingOrderNo || paying}}"
+        bindtap="onMockPay"
+      >模拟支付成功</button>
+    </view>
+  </view>
+</view>

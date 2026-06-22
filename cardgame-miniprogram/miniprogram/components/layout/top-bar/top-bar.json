@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "options": {
+    "multipleSlots": true
+  },
+  "usingComponents": {
+    "gold-badge": "../gold-badge/gold-badge"
+  }
+}

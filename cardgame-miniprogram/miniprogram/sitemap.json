@@ -1,0 +1,4 @@
+{
+  "desc": "cardgame-miniprogram",
+  "rules": [{ "action": "allow", "page": "*" }]
+}

@@ -1,0 +1,45 @@
+.action-bar {
+  flex-shrink: 0;
+  padding: 0 16rpx 6rpx;
+  margin-top: -4rpx;
+}
+
+.action-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20rpx;
+  max-width: 520rpx;
+  margin: 0 auto;
+}
+
+.action-btn {
+  flex: 1;
+  min-width: 132rpx;
+  max-width: 200rpx;
+  height: 52rpx !important;
+  line-height: 52rpx !important;
+  padding: 0 24rpx !important;
+  margin: 0 !important;
+  border-radius: 30rpx !important;
+  font-size: 24rpx !important;
+  font-weight: 600;
+}
+
+.action-btn.btn-primary {
+  background: linear-gradient(180deg, #ffb74d 0%, #f57c00 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 4rpx 12rpx rgba(245, 124, 0, 0.35);
+}
+
+.action-btn.btn-ghost {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-1) !important;
+  border: 1rpx solid rgba(255, 255, 255, 0.22) !important;
+}
+
+.action-btn[disabled] {
+  opacity: 0.38 !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,56 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cardgame_db?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8
+    username: root
+    password:
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 1
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+cardgame:
+  jwt:
+    player-secret: ${PLAYER_JWT_SECRET:dev-player-secret-change-me-32bytes-min!!}
+    admin-secret: ${ADMIN_JWT_SECRET:dev-admin-secret-change-me-32bytes-min!!}
+    access-expire: 7200
+    refresh-expire: 604800
+  wechat:
+    app-id: ${WECHAT_APP_ID:}
+    app-secret: ${WECHAT_APP_SECRET:}
+    mock-enabled: ${WECHAT_MOCK_ENABLED:true}
+  redis:
+    enabled: ${REDIS_ENABLED:false}
+    ws-channel-prefix: "ws:room:"
+  job:
+    stale-room-hours: 2
+    cleanup-interval-ms: 300000
+    match-expand-interval-ms: 10000
+    settlement-consume-interval-ms: 2000
+  settlement:
+    async-enabled: ${SETTLEMENT_ASYNC_ENABLED:false}
+    stream-name: cardgame:settlement
+    consumer-group: settlement-workers
+    consumer-name: worker-1
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

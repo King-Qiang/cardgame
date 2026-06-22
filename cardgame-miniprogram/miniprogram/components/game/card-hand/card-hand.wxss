@@ -1,0 +1,24 @@
+.hand-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  flex-shrink: 0;
+  padding: 0 8rpx;
+  box-sizing: border-box;
+}
+
+.hand-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: visible;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.hand-slot {
+  flex: 0 0 auto;
+  position: relative;
+  overflow: visible;
+}

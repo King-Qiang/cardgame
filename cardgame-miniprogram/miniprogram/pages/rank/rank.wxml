@@ -1,0 +1,45 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="sub-page rank-page">
+  <top-bar title="排行榜" gold="{{gold}}" bind:back="onBack">
+    <view slot="right" class="season-tag">赛季 {{seasonId || '—'}}</view>
+  </top-bar>
+  <view class="rank-tabs">
+    <view
+      class="tab {{gameType === 'DOUDIZHU' ? 'active' : ''}}"
+      data-game-type="DOUDIZHU"
+      bindtap="onTab"
+    >斗地主</view>
+    <view
+      class="tab disabled"
+      data-game-type="MAHJONG"
+      bindtap="onTab"
+    >麻将</view>
+  </view>
+  <view class="rank-body">
+    <view class="my-card panel">
+      <text class="card-title">我的段位</text>
+      <text class="tier">{{myTierText}}</text>
+      <text class="progress">{{myProgressText}}</text>
+    </view>
+    <view class="board panel">
+      <view class="board-head">
+        <text class="col rank">排名</text>
+        <text class="col name">昵称</text>
+        <text class="col tier">段位</text>
+        <text class="col pts">积分</text>
+        <text class="col wl">胜/负</text>
+      </view>
+      <scroll-view class="board-list" scroll-y enhanced show-scrollbar="{{false}}">
+        <view wx:if="{{loading}}" class="hint">加载中…</view>
+        <view wx:elif="{{list.length === 0}}" class="hint">暂无排行</view>
+        <view wx:for="{{list}}" wx:key="userId" class="board-row">
+          <text class="col rank">{{item.rank}}</text>
+          <text class="col name">{{item.nickname || ('玩家' + item.userId)}}</text>
+          <text class="col tier">{{item.tierText}}</text>
+          <text class="col pts">{{item.points}}</text>
+          <text class="col wl">{{item.recordText}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

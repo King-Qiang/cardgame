@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/lobby/lobby",
+    "pages/records/records",
+    "pages/profile/profile",
+    "pages/match/match",
+    "pages/room/room",
+    "pages/game/game",
+    "pages/result/result",
+    "pages/rank/rank",
+    "pages/shop/shop",
+    "pages/recharge/recharge",
+    "pages/wallet/wallet",
+    "pages/sign/sign",
+    "pages/settings/settings",
+    "pages/legal/legal",
+    "pages/records/detail/detail"
+  ],
+  "window": {
+    "pageOrientation": "landscape",
+    "navigationStyle": "custom",
+    "backgroundColor": "#0F1923"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

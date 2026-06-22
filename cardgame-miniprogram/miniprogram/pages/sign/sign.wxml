@@ -1,0 +1,28 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="sub-page">
+  <top-bar title="每日签到" gold="{{gold}}" bind:back="onBack" />
+  <view class="sub-body sign-body">
+    <text class="header-text">{{headerText}}</text>
+    <scroll-view wx:if="{{!loading}}" class="reward-scroll" scroll-x enhanced enable-flex show-scrollbar="{{false}}">
+      <view class="reward-row">
+        <view
+          wx:for="{{cells}}"
+          wx:key="day"
+          class="reward-cell panel {{item.today ? 'today' : ''}} {{item.signed ? 'signed' : ''}}"
+        >
+          <text class="reward">{{item.reward}}</text>
+          <text class="day">第{{item.day}}天</text>
+          <text wx:if="{{item.signed}}" class="mark">✓</text>
+          <text wx:elif="{{item.today}}" class="mark star">★</text>
+        </view>
+      </view>
+    </scroll-view>
+    <view wx:else class="hint">加载中…</view>
+    <button
+      class="btn-primary sign-btn"
+      loading="{{signing}}"
+      disabled="{{actionDisabled}}"
+      bindtap="onSignTap"
+    >{{actionText}}</button>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="sub-page">
+  <top-bar title="金币流水" gold="{{gold}}" bind:back="onBack" />
+  <view class="sub-body wallet-body">
+    <view class="table-head panel">
+      <text class="col time">时间</text>
+      <text class="col type">类型</text>
+      <text class="col amount">变动</text>
+      <text class="col balance">余额</text>
+    </view>
+    <scroll-view class="table-body" scroll-y enhanced show-scrollbar="{{false}}">
+      <view wx:if="{{loading}}" class="hint">加载中…</view>
+      <view wx:elif="{{empty}}" class="hint">暂无流水记录</view>
+      <view wx:for="{{rows}}" wx:key="id" class="table-row">
+        <text class="col time">{{item.timeText}}</text>
+        <text class="col type">{{item.typeLabel}}</text>
+        <text class="col amount {{item.amount >= 0 ? 'pos' : 'neg'}}">{{item.amountText}}</text>
+        <text class="col balance">{{item.balanceText}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

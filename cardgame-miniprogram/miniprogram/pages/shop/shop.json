@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "disableScroll": true,
+  "usingComponents": {
+    "top-bar": "/components/layout/top-bar/top-bar",
+    "app-modal": "/components/layout/modal/modal"
+  }
+}

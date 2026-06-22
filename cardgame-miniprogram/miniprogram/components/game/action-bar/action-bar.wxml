@@ -1,0 +1,28 @@
+<view class="action-bar">
+  <view class="action-inner">
+    <block wx:if="{{phase === 'BIDDING'}}">
+      <button
+        class="btn-ghost action-btn"
+        disabled="{{!myTurn || loading}}"
+        bindtap="onPass"
+      >不叫</button>
+      <button
+        class="btn-primary action-btn"
+        disabled="{{!myTurn || loading}}"
+        bindtap="onCall"
+      >叫地主</button>
+    </block>
+    <block wx:else>
+      <button
+        class="btn-ghost action-btn"
+        disabled="{{!canPass || loading}}"
+        bindtap="onPass"
+      >不出</button>
+      <button
+        class="btn-primary action-btn"
+        disabled="{{!canPlay || loading}}"
+        bindtap="onPlay"
+      >出牌</button>
+    </block>
+  </view>
+</view>

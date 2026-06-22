@@ -1,0 +1,8 @@
+<view class="top-bar">
+  <view wx:if="{{showBack}}" class="back btn-ghost" bindtap="onBack">← 返回</view>
+  <text class="title">{{title}}</text>
+  <view class="right">
+    <slot name="right" />
+    <gold-badge wx:if="{{gold >= 0}}" gold="{{gold}}" />
+  </view>
+</view>

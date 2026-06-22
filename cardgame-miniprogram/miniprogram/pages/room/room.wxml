@@ -1,0 +1,64 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="room-page">
+  <view class="room-header">
+    <view class="room-id-row">
+      <text class="room-id">房间号 {{roomId}}</text>
+      <button class="btn-ghost mini-btn" size="mini" bindtap="onCopyRoomId">复制</button>
+      <button class="btn-ghost mini-btn" size="mini" open-type="share">分享</button>
+    </view>
+    <button class="btn-ghost leave-btn" bindtap="onLeaveTap">离开</button>
+  </view>
+
+  <view class="seats">
+    <view wx:for="{{seats}}" wx:key="seat" class="seat panel {{item.occupied ? '' : 'empty'}}">
+      <text class="seat-label">座位 {{item.seat + 1}}</text>
+      <view class="seat-avatar">{{item.avatarText}}</view>
+      <view class="seat-name-row">
+        <text class="seat-name">{{item.nickname}}</text>
+        <text wx:if="{{item.isRobot}}" class="robot-badge">电脑</text>
+        <text wx:if="{{item.isOwner}}" class="owner-badge">👑</text>
+      </view>
+      <text wx:if="{{item.occupied && item.ready}}" class="ready-tag">已准备</text>
+      <text wx:elif="{{item.occupied && item.isSelf}}" class="ready-tag pending">未准备</text>
+      <text wx:elif="{{!item.occupied}}" class="ready-tag pending">空位</text>
+      <button
+        wx:if="{{isOwner && item.isRobot}}"
+        class="btn-ghost mini-btn remove-bot-btn"
+        size="mini"
+        data-seat="{{item.seat}}"
+        bindtap="onRemoveBot"
+      >移除</button>
+    </view>
+  </view>
+
+  <view class="room-actions">
+    <button
+      wx:if="{{canAddBot}}"
+      class="btn-ghost action-btn"
+      loading="{{actionLoading}}"
+      bindtap="onAddBot"
+    >+ 添加电脑</button>
+    <button
+      class="btn-primary action-btn"
+      loading="{{actionLoading}}"
+      bindtap="onToggleReady"
+    >{{myReady ? '取消准备' : '准备'}}</button>
+    <button
+      wx:if="{{isOwner}}"
+      class="btn-primary action-btn start-btn"
+      disabled="{{!canStart}}"
+      loading="{{actionLoading}}"
+      bindtap="onStartGame"
+    >开始游戏</button>
+  </view>
+</view>
+
+<app-modal
+  visible="{{showLeaveModal}}"
+  title="确认离开？"
+  confirmText="离开"
+  bind:cancel="onLeaveCancel"
+  bind:confirm="onLeaveConfirm"
+>
+  <text class="leave-hint">离开后将退出当前房间</text>
+</app-modal>

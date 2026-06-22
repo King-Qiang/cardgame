@@ -1,0 +1,49 @@
+.play-zone {
+  flex: 1;
+  min-width: 160rpx;
+  max-width: 360rpx;
+  min-height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rpx;
+  padding: 8rpx 12rpx;
+}
+
+.phase-label {
+  font-size: 22rpx;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 18rpx;
+  color: var(--text-2);
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.face-row {
+  flex-wrap: wrap;
+  gap: 4rpx;
+  max-width: 100%;
+}
+
+.back-row {
+  position: relative;
+  min-height: 88rpx;
+}
+
+.back-slot {
+  position: relative;
+}
+
+.empty {
+  font-size: 20rpx;
+  color: var(--text-3);
+}

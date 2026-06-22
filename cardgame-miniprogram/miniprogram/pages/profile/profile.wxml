@@ -1,0 +1,31 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<landscape-shell activeTab="profile">
+  <view class="page">
+    <view class="header panel">
+      <view class="avatar">{{avatarText}}</view>
+      <view class="info">
+        <text class="nickname">{{nickname}}</text>
+        <text class="uid">ID: {{userId}}</text>
+      </view>
+      <gold-badge gold="{{gold}}" />
+      <view class="rank-block">
+        <text class="rank-line">段位 {{tierText}}</text>
+        <text class="rank-sub">{{rankStats}}</text>
+      </view>
+    </view>
+
+    <view class="grid">
+      <view class="grid-item panel" bindtap="goShop">商城</view>
+      <view class="grid-item panel" bindtap="goWallet">流水</view>
+      <view class="grid-item panel" bindtap="goSign">签到</view>
+      <view class="grid-item panel" bindtap="goRank">排行榜</view>
+    </view>
+
+    <view class="links panel">
+      <text bindtap="goSettings">设置</text>
+      <text bindtap="goLegal" data-type="user">用户协议</text>
+      <text bindtap="goLegal" data-type="privacy">隐私政策</text>
+      <text class="logout" bindtap="onLogout">退出登录</text>
+    </view>
+  </view>
+</landscape-shell>

@@ -1,0 +1,48 @@
+.modal-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-panel {
+  width: 480rpx;
+  max-width: 85%;
+  padding: 20rpx;
+  background: var(--bg-panel);
+  border-radius: var(--panel-radius);
+  border: 1rpx solid var(--border);
+}
+
+.modal-title {
+  display: block;
+  font-size: 24rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+  text-align: center;
+}
+
+.modal-body {
+  margin-bottom: 16rpx;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 16rpx;
+  justify-content: flex-end;
+}
+
+.modal-btn {
+  flex: 1;
+  margin: 0 !important;
+  padding: 16rpx 24rpx !important;
+  font-size: 26rpx !important;
+  line-height: 1.4 !important;
+}
+
+.modal-btn::after {
+  border: none;
+}

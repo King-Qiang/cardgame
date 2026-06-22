@@ -1,0 +1,17 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="sub-page">
+  <top-bar title="{{title}}" gold="{{gold}}" bind:back="onBack" />
+  <view class="sub-body detail-body">
+    <view wx:if="{{loading}}" class="hint">加载中…</view>
+    <view wx:else class="panel detail-card">
+      <text class="summary">{{summaryLine}}</text>
+      <text class="result {{isWin ? 'win' : 'lose'}}">{{resultLine}}</text>
+      <view class="participants">
+        <view wx:for="{{participants}}" wx:key="userId" class="participant-row">
+          <text class="name">{{item.nickname}}{{item.tagText}}</text>
+          <text class="gold {{item.goldDelta >= 0 ? 'pos' : 'neg'}}">{{item.goldText}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

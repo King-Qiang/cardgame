@@ -1,0 +1,35 @@
+.top-bar {
+  height: 64rpx;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 0 8rpx;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.back {
+  flex-shrink: 0;
+  font-size: 20rpx !important;
+  padding: 8rpx 12rpx !important;
+  line-height: 1.2 !important;
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  font-size: 24rpx;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  max-width: 48%;
+}

@@ -1,0 +1,21 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="match-page">
+  <view class="match-top">
+    <button class="btn-ghost back-btn" bindtap="onCancel">← 取消</button>
+  </view>
+
+  <view class="match-body">
+    <view class="dots">
+      <view class="dot"></view>
+      <view class="dot delay-1"></view>
+      <view class="dot delay-2"></view>
+    </view>
+    <text class="status">{{statusText}}</text>
+    <text class="sub">{{matchLabel}} · {{subText || '等待其他玩家…'}}</text>
+    <text wx:if="{{wsConnected}}" class="ws-hint">网络已就绪</text>
+  </view>
+
+  <view class="match-footer">
+    <button class="btn-primary cancel-btn" loading="{{cancelling}}" bindtap="onCancel">取消匹配</button>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+{
+  "miniprogramRoot": "./",
+  "compileType": "miniprogram",
+  "appid": "wxf8d3e029ebed7428",
+  "projectname": "cardgame-miniprogram",
+  "description": "若从 miniprogram 子目录打开项目，请使用本配置；推荐打开上一级 cardgame-miniprogram/ 目录。",
+  "setting": {
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "enhance": true,
+    "useCompilerPlugins": [
+      "typescript"
+    ],
+    "urlCheck": false,
+    "ignoreDevUnusedFiles": false
+  },
+  "libVersion": "3.16.1"
+}

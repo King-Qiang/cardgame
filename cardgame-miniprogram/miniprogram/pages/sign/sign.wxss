@@ -1,0 +1,95 @@
+.sign-body {
+  flex: 1;
+  min-height: 0;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 10rpx !important;
+  padding: 6rpx 0 12rpx;
+  overflow: hidden;
+}
+
+.header-text {
+  flex-shrink: 0;
+  padding: 0 16rpx;
+  font-size: 20rpx;
+  color: var(--text-2);
+}
+
+.reward-scroll {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.reward-row {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 10rpx;
+  height: 100%;
+  min-height: 100%;
+  padding: 6rpx 40rpx 14rpx 12rpx;
+  box-sizing: border-box;
+}
+
+.reward-cell {
+  width: 104rpx;
+  height: 100%;
+  min-height: 0;
+  padding: 22rpx 8rpx 14rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.reward-cell.today {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2rpx rgba(245, 200, 66, 0.35);
+}
+
+.reward-cell.signed {
+  opacity: 0.85;
+}
+
+.reward {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.day {
+  flex-shrink: 0;
+  font-size: 16rpx;
+  color: var(--text-3);
+  line-height: 1.2;
+  padding-bottom: 2rpx;
+}
+
+.mark {
+  position: absolute;
+  top: 8rpx;
+  right: 8rpx;
+  font-size: 20rpx;
+  color: var(--success);
+}
+
+.mark.star {
+  color: var(--gold);
+}
+
+.sign-btn {
+  flex-shrink: 0;
+  align-self: center;
+  min-width: 220rpx;
+  margin-top: 4rpx;
+  margin-bottom: 8rpx;
+  padding: 8rpx 24rpx !important;
+}

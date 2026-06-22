@@ -1,0 +1,18 @@
+<view class="play-zone">
+  <text wx:if="{{phaseLabel}}" class="phase-label">{{phaseLabel}}</text>
+  <text wx:if="{{subtitle}}" class="subtitle">{{subtitle}}</text>
+  <view wx:if="{{faces.length > 0}}" class="cards face-row">
+    <card-item wx:for="{{faces}}" wx:key="code" code="{{item.code}}" compact="{{true}}" />
+  </view>
+  <view wx:elif="{{backs.length > 0}}" class="cards back-row">
+    <view
+      wx:for="{{backs}}"
+      wx:key="*this"
+      class="back-slot"
+      style="margin-left: {{index === 0 ? 0 : -18}}rpx; z-index: {{index}};"
+    >
+      <card-item faceDown="{{true}}" playBack="{{true}}" />
+    </view>
+  </view>
+  <text wx:elif="{{!phaseLabel}}" class="empty">等待出牌</text>
+</view>

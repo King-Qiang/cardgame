@@ -1,0 +1,19 @@
+<view class="hand-wrap" style="padding-top: {{handPaddingTop}}rpx;">
+  <view class="hand-row" style="width: {{rowWidth}}rpx;">
+    <view
+      wx:for="{{items}}"
+      wx:key="code"
+      class="hand-slot"
+      style="margin-left: {{index === 0 ? 0 : -overlap}}rpx; z-index: {{index}};"
+      data-code="{{item.code}}"
+      bindtap="onTap"
+    >
+      <card-item
+        code="{{item.code}}"
+        selected="{{item.isSelected}}"
+        customWidth="{{cardW}}"
+        customHeight="{{cardH}}"
+      />
+    </view>
+  </view>
+</view>

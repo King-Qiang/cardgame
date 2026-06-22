@@ -1,0 +1,7 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="sub-page">
+  <top-bar title="{{title}}" gold="{{gold}}" bind:back="onBack" />
+  <view class="sub-body">
+    <text class="hint">提审前替换正式文案</text>
+  </view>
+</view>

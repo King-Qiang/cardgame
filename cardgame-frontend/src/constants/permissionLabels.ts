@@ -1,0 +1,21 @@
+import { PERMISSIONS } from './permissions'
+
+export const PERMISSION_LABELS: Record<string, string> = {
+  [PERMISSIONS.DASHBOARD_VIEW]: '仪表盘查看',
+  [PERMISSIONS.USER_LIST]: '用户列表',
+  [PERMISSIONS.USER_BAN]: '封禁/解封',
+  [PERMISSIONS.USER_ADJUST]: '人工调账',
+  [PERMISSIONS.ROOM_MONITOR]: '房间监控',
+  [PERMISSIONS.ROOM_KICK]: '踢人',
+  [PERMISSIONS.ROOM_DISBAND]: '解散房间',
+  [PERMISSIONS.RECORD_LIST]: '对局记录',
+  [PERMISSIONS.ECONOMY_TRANSACTION]: '金币流水',
+  [PERMISSIONS.ECONOMY_ADJUST]: '调账审批',
+  [PERMISSIONS.SHOP_MANAGE]: '商城/活动管理',
+  [PERMISSIONS.SYSTEM_ADMIN]: '管理员账号',
+  [PERMISSIONS.SYSTEM_ROLE]: '角色管理',
+  [PERMISSIONS.SYSTEM_LOG]: '操作日志',
+  [PERMISSIONS.SYSTEM_CONFIG]: '系统配置',
+}
+
+export const ALL_PERMISSIONS = Object.values(PERMISSIONS)

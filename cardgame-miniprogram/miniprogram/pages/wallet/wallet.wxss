@@ -1,0 +1,60 @@
+.wallet-body {
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  padding: 8rpx 12rpx;
+  gap: 0 !important;
+}
+
+.table-head,
+.table-row {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 12rpx;
+  font-size: 20rpx;
+}
+
+.table-head {
+  flex-shrink: 0;
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+.table-body {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.table-row {
+  border-bottom: 1rpx solid var(--border);
+}
+
+.col {
+  flex-shrink: 0;
+}
+
+.col.time {
+  width: 22%;
+}
+
+.col.type {
+  width: 22%;
+}
+
+.col.amount {
+  width: 22%;
+  font-weight: 600;
+}
+
+.col.balance {
+  width: 34%;
+  text-align: right;
+}
+
+.col.amount.pos {
+  color: var(--success);
+}
+
+.col.amount.neg {
+  color: var(--danger);
+}

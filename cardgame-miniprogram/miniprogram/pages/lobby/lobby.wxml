@@ -1,0 +1,73 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<landscape-shell activeTab="lobby">
+  <view class="lobby">
+    <view class="top-bar">
+      <view class="user">
+        <view class="avatar">{{avatarText}}</view>
+        <text class="nickname">{{nickname}}</text>
+      </view>
+      <view class="top-actions">
+        <gold-badge gold="{{gold}}" bind:tap="goWallet" />
+        <view class="rank-tag" bindtap="goRank">{{tierText}}</view>
+        <button class="sign-btn" size="mini" bindtap="goSign">签到</button>
+      </view>
+    </view>
+
+    <scroll-view class="game-tabs" scroll-x enhanced show-scrollbar="{{false}}">
+      <view
+        wx:for="{{gameTabs}}"
+        wx:key="gameType"
+        class="tab {{gameType === item.gameType ? 'active' : ''}} {{item.disabled ? 'disabled' : ''}}"
+        data-game-type="{{item.gameType}}"
+        bindtap="onSelectGame"
+      >
+        <text class="tab-label">{{item.label}}</text>
+        <text class="tab-desc">{{item.desc}}</text>
+      </view>
+    </scroll-view>
+
+    <view class="cards">
+      <view class="card primary" bindtap="onQuickMatch">
+        <text class="card-title">⚡ 快速匹配</text>
+        <text class="card-desc">休闲 · 即开即打</text>
+      </view>
+      <view class="card primary" bindtap="onRanked">
+        <text class="card-title">🏆 排位赛</text>
+        <text class="card-desc">RANKED · 段位局</text>
+      </view>
+      <view class="card card-sm" bindtap="onCreateRoom">
+        <text class="card-title">+ 创建房间</text>
+      </view>
+      <view class="card card-sm" bindtap="onJoinRoom">
+        <text class="card-title"># 加入房间</text>
+      </view>
+      <view class="card card-sm" bindtap="onGoRank">
+        <text class="card-title">📊 排行榜</text>
+      </view>
+      <view class="card card-sm card-pve" bindtap="onPvePractice">
+        <text class="card-title">🤖 人机练习</text>
+        <text class="card-desc">单人 · 跳过等待</text>
+      </view>
+    </view>
+
+    <view class="banner panel" bindtap="goSign">
+      <text>📢 每日签到领金币 · 点击前往</text>
+    </view>
+  </view>
+</landscape-shell>
+
+<app-modal
+  visible="{{showJoinModal}}"
+  title="加入亲友房"
+  confirmText="加入"
+  bind:cancel="onJoinCancel"
+  bind:confirm="onJoinConfirm"
+>
+  <input
+    class="join-input"
+    placeholder="请输入房间号"
+    value="{{joinRoomId}}"
+    bindinput="onJoinInput"
+    confirm-type="done"
+  />
+</app-modal>

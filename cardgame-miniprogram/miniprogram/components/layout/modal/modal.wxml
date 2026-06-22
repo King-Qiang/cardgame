@@ -1,0 +1,12 @@
+<view wx:if="{{visible}}" class="modal-mask" catchtap="onMaskTap">
+  <view class="modal-panel" catchtap="noop">
+    <text wx:if="{{title}}" class="modal-title">{{title}}</text>
+    <view class="modal-body">
+      <slot></slot>
+    </view>
+    <view class="modal-actions">
+      <button wx:if="{{showCancel}}" class="btn-ghost modal-btn" bindtap="onCancel">{{cancelText}}</button>
+      <button class="btn-primary modal-btn" bindtap="onConfirm">{{confirmText}}</button>
+    </view>
+  </view>
+</view>

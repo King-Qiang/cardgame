@@ -1,0 +1,33 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view wx:if="{{loaded}}" class="result-page page-full">
+  <view class="hero {{isWin ? 'win' : 'lose'}}">
+    <text class="emoji">{{isWin ? '🏆' : '😔'}}</text>
+    <text class="title">{{title}}</text>
+  </view>
+  <view class="stats panel">
+    <view class="row">
+      <text class="label">金币</text>
+      <text class="value {{goldDelta > 0 ? 'pos' : goldDelta < 0 ? 'neg' : ''}}">{{goldText}}</text>
+    </view>
+    <view class="row">
+      <text class="label">本局得分</text>
+      <text class="value">{{scoreDelta >= 0 ? '+' : ''}}{{scoreDelta}}</text>
+    </view>
+    <view class="row">
+      <text class="label">倍数</text>
+      <text class="value">×{{multiplier}}</text>
+    </view>
+    <view wx:if="{{mode === 'RANKED'}}" class="row">
+      <text class="label">段位</text>
+      <text class="value">{{tierText}}</text>
+    </view>
+    <view wx:if="{{rankStats}}" class="row">
+      <text class="label">赛季</text>
+      <text class="value">{{rankStats}}</text>
+    </view>
+  </view>
+  <view class="actions">
+    <button class="btn-primary" bindtap="onRematch">再来一局</button>
+    <button class="btn-ghost" bindtap="onGoLobby">返回大厅</button>
+  </view>
+</view>

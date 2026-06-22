@@ -1,0 +1,66 @@
+.detail-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+.hint {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-2);
+  font-size: 20rpx;
+}
+
+.detail-card {
+  padding: 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.summary {
+  font-size: 18rpx;
+  color: var(--text-2);
+}
+
+.result {
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.result.win {
+  color: #6bcb77;
+}
+
+.result.lose {
+  color: #ff8a80;
+}
+
+.participants {
+  margin-top: 8rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.participant-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20rpx;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+}
+
+.gold.pos {
+  color: #6bcb77;
+}
+
+.gold.neg {
+  color: #ff8a80;
+}

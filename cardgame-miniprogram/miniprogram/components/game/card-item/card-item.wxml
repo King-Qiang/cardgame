@@ -1,0 +1,12 @@
+<view
+  class="card {{selected ? 'selected' : ''}} {{compact ? 'compact' : ''}} {{playBack ? 'play-back' : ''}} {{playTable ? 'play-table' : ''}} {{faceDown ? 'back' : ''}} {{isRed ? 'red' : 'black'}}"
+  style="{{sizeStyle}}"
+>
+  <block wx:if="{{faceDown}}">
+    <view class="back-pattern" />
+  </block>
+  <block wx:else>
+    <text class="rank">{{rank}}</text>
+    <text class="suit">{{suitSymbol}}</text>
+  </block>
+</view>

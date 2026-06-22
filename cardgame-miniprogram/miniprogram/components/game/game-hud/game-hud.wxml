@@ -1,0 +1,13 @@
+<view class="game-hud">
+  <view class="left">
+    <text class="room">房间 {{roomId}}</text>
+    <text class="multiplier">底分 ×{{multiplier}}</text>
+  </view>
+  <view class="center">
+    <text class="timer {{urgent ? 'urgent' : ''}}">{{turnSeconds}}s</text>
+  </view>
+  <view class="right">
+    <text class="net {{connected ? 'ok' : 'bad'}}">{{connected ? '📶 已连接' : '📶 断开'}}</text>
+    <button class="btn-ghost exit-btn" size="mini" bindtap="onExit">退出</button>
+  </view>
+</view>

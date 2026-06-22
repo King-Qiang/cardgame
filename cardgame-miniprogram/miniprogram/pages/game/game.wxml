@@ -1,0 +1,81 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="game-page page-full">
+  <game-hud
+    roomId="{{roomId}}"
+    multiplier="{{multiplier}}"
+    turnSeconds="{{turnSeconds}}"
+    connected="{{connected}}"
+    urgent="{{turnUrgent}}"
+    bind:exit="onExitTap"
+  />
+
+  <view class="table">
+    <view class="table-top">
+      <player-seat
+        wx:if="{{leftOpponent}}"
+        nickname="{{leftOpponent.nickname}}"
+        avatarText="{{leftOpponent.avatarText}}"
+        handCount="{{leftOpponent.handCount}}"
+        isLandlord="{{leftOpponent.isLandlord}}"
+        isActive="{{leftOpponent.isActive}}"
+        showPass="{{leftOpponent.showPass}}"
+        passLabel="{{leftOpponent.passLabel}}"
+        tableCards="{{leftOpponent.tableCards}}"
+        tableBackCount="{{leftOpponent.tableBackCount}}"
+        align="left"
+      />
+      <play-zone
+        faceCards="{{playZoneFaceCards}}"
+        backCount="{{playZoneBackCount}}"
+        subtitle="{{playZoneSubtitle}}"
+        phaseLabel="{{phaseLabel}}"
+      />
+      <player-seat
+        wx:if="{{rightOpponent}}"
+        nickname="{{rightOpponent.nickname}}"
+        avatarText="{{rightOpponent.avatarText}}"
+        handCount="{{rightOpponent.handCount}}"
+        isLandlord="{{rightOpponent.isLandlord}}"
+        isActive="{{rightOpponent.isActive}}"
+        showPass="{{rightOpponent.showPass}}"
+        passLabel="{{rightOpponent.passLabel}}"
+        tableCards="{{rightOpponent.tableCards}}"
+        tableBackCount="{{rightOpponent.tableBackCount}}"
+        align="right"
+      />
+    </view>
+  </view>
+
+  <view class="player-dock">
+    <card-hand
+      cards="{{myHand}}"
+      selected="{{selectedCards}}"
+      viewportKey="{{viewportPageStyle}}"
+      bind:toggle="onToggleCard"
+    />
+
+    <action-bar
+      phase="{{phase}}"
+      myTurn="{{myTurn}}"
+      canPass="{{canPass}}"
+      canPlay="{{canPlay}}"
+      loading="{{actionLoading}}"
+      bind:pass="onPass"
+      bind:call="onCall"
+      bind:play="onPlay"
+    />
+  </view>
+
+  <view wx:if="{{disconnectOverlay}}" class="overlay">
+    <text>连接已断开，请检查网络</text>
+  </view>
+</view>
+
+<app-modal
+  visible="{{showExitModal}}"
+  title="退出对局"
+  bind:cancel="onExitCancel"
+  bind:confirm="onExitConfirm"
+>
+  <text class="text-muted">确定退出并返回大厅吗？</text>
+</app-modal>

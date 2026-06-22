@@ -1,0 +1,39 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="sub-page">
+  <top-bar title="商城" gold="{{gold}}" bind:back="onBack">
+    <view slot="right" class="top-actions">
+      <button class="btn-ghost mini-btn" size="mini" bindtap="goRecharge">充值</button>
+    </view>
+  </top-bar>
+  <view class="sub-body shop-body">
+    <view wx:if="{{loading}}" class="hint">加载中…</view>
+    <scroll-view
+      wx:else
+      class="shop-scroll"
+      scroll-x
+      enhanced
+      enable-flex
+      show-scrollbar="{{false}}"
+    >
+      <view class="shop-row">
+        <view wx:for="{{items}}" wx:key="id" class="shop-card panel">
+          <text class="name">{{item.name}}</text>
+          <text class="grant">+{{item.grantedGold}} 金币</text>
+          <text class="price">💰 {{item.priceText}}</text>
+          <button class="btn-primary buy-btn" data-id="{{item.id}}" bindtap="onBuyTap">购买</button>
+        </view>
+        <view wx:if="{{items.length === 0}}" class="hint">暂无商品</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<app-modal
+  visible="{{showBuyModal}}"
+  title="确认购买"
+  confirmText="{{buying ? '购买中…' : '确认'}}"
+  bind:cancel="onBuyCancel"
+  bind:confirm="onBuyConfirm"
+>
+  <text class="modal-text">{{buyConfirmText}}</text>
+</app-modal>

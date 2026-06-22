@@ -1,0 +1,54 @@
+.recharge-body {
+  gap: 16rpx !important;
+  padding: 12rpx 16rpx;
+}
+
+.dev-tag {
+  font-size: 18rpx;
+  color: var(--text-3);
+}
+
+.tier-row {
+  display: flex;
+  gap: 12rpx;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tier {
+  width: 200rpx;
+  padding: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.tier.active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2rpx rgba(245, 200, 66, 0.35);
+}
+
+.tier .label {
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.tier .gold {
+  font-size: 20rpx;
+  color: var(--gold);
+}
+
+.status {
+  font-size: 20rpx;
+  color: var(--text-2);
+}
+
+.actions {
+  display: flex;
+  gap: 12rpx;
+}
+
+.actions button {
+  min-width: 180rpx;
+}

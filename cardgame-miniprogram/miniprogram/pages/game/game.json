@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "custom",
+  "disableScroll": true,
+  "usingComponents": {
+    "game-hud": "/components/game/game-hud/game-hud",
+    "player-seat": "/components/game/player-seat/player-seat",
+    "play-zone": "/components/game/play-zone/play-zone",
+    "card-hand": "/components/game/card-hand/card-hand",
+    "action-bar": "/components/game/action-bar/action-bar",
+    "app-modal": "/components/layout/modal/modal"
+  }
+}

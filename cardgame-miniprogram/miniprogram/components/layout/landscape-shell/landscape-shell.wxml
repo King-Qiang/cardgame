@@ -1,0 +1,6 @@
+<view class="shell">
+  <nav-dock wx:if="{{showDock}}" active="{{activeTab}}" />
+  <view class="main">
+    <slot />
+  </view>
+</view>

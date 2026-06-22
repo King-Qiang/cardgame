@@ -1,0 +1,108 @@
+.seat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rpx;
+  min-width: 96rpx;
+  max-width: 280rpx;
+  position: relative;
+}
+
+.seat-left {
+  align-items: flex-start;
+}
+
+.seat-right {
+  align-items: flex-end;
+}
+
+.seat-main {
+  display: flex;
+  align-items: flex-end;
+  gap: 6rpx;
+}
+
+.seat-left .seat-main {
+  flex-direction: row;
+}
+
+.seat-right .seat-main {
+  flex-direction: row-reverse;
+}
+
+.seat.active .avatar {
+  box-shadow: 0 0 0 3rpx var(--gold);
+}
+
+.avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: var(--bg-panel-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.landlord-tag {
+  position: absolute;
+  right: -8rpx;
+  top: -8rpx;
+  background: var(--gold);
+  color: #1a1200;
+  font-size: 16rpx;
+  padding: 2rpx 6rpx;
+  border-radius: 6rpx;
+}
+
+.table-play {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  max-width: 260rpx;
+  min-height: 68rpx;
+  padding-bottom: 2rpx;
+  overflow: visible;
+}
+
+.table-card-slot {
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.name {
+  font-size: 20rpx;
+  color: var(--text-2);
+  max-width: 120rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.count {
+  font-size: 18rpx;
+  color: var(--text-3);
+}
+
+.table-pass {
+  min-width: 56rpx;
+  height: 62rpx;
+  padding: 0 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8rpx;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 20rpx;
+  font-weight: 600;
+  white-space: nowrap;
+}

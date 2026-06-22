@@ -1,0 +1,29 @@
+<view class="seat seat-{{align}} {{isActive ? 'active' : ''}}">
+  <view class="seat-main">
+    <view class="avatar-wrap">
+      <view class="avatar">{{avatarText}}</view>
+      <text wx:if="{{isLandlord}}" class="landlord-tag">地主</text>
+    </view>
+    <view wx:if="{{tableCards.length || tableBackCount > 0}}" class="table-play">
+      <view
+        wx:for="{{tableCards}}"
+        wx:key="*this"
+        class="table-card-slot"
+        style="margin-left: {{index === 0 ? 0 : -14}}rpx; z-index: {{index}};"
+      >
+        <card-item code="{{item}}" playTable="{{true}}" />
+      </view>
+      <view
+        wx:for="{{tableBacks}}"
+        wx:key="*this"
+        class="table-card-slot"
+        style="margin-left: {{index === 0 ? 0 : -14}}rpx; z-index: {{index}};"
+      >
+        <card-item faceDown="{{true}}" playTable="{{true}}" />
+      </view>
+    </view>
+    <view wx:elif="{{showPass}}" class="table-pass">{{passLabel || '不出'}}</view>
+  </view>
+  <text class="name">{{nickname}}</text>
+  <text class="count">{{handCount}} 张</text>
+</view>

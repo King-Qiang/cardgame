@@ -1,0 +1,4 @@
+<view class="badge" bindtap="onTap">
+  <text class="icon">💰</text>
+  <text class="value">{{goldText}}</text>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "disableScroll": true,
+  "usingComponents": {
+    "landscape-shell": "/components/layout/landscape-shell/landscape-shell",
+    "gold-badge": "/components/layout/gold-badge/gold-badge"
+  }
+}

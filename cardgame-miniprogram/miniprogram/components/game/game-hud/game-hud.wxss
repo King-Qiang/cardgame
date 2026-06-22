@@ -1,0 +1,51 @@
+.game-hud {
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12rpx;
+  background: rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.room {
+  font-size: 20rpx;
+  color: var(--text-2);
+}
+
+.multiplier {
+  font-size: 20rpx;
+  color: var(--gold);
+}
+
+.timer {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.timer.urgent {
+  color: var(--danger);
+}
+
+.net.ok {
+  color: var(--success);
+  font-size: 18rpx;
+}
+
+.net.bad {
+  color: var(--danger);
+  font-size: 18rpx;
+}
+
+.exit-btn {
+  padding: 4rpx 12rpx !important;
+  font-size: 18rpx !important;
+}

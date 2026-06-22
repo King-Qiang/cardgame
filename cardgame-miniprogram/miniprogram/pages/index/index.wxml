@@ -1,0 +1,9 @@
+<page-meta root-font-size="{{rootFontSize}}" page-style="{{viewportPageStyle}}" />
+<view class="page">
+  <view class="center">
+    <text class="logo">🃏</text>
+    <text class="title">棋牌斗地主</text>
+    <text class="status">{{statusText}}</text>
+    <button wx:if="{{showRetry}}" class="btn-primary retry" bindtap="onRetry">重新登录</button>
+  </view>
+</view>
